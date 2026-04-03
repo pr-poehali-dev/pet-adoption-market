@@ -6,31 +6,37 @@ const listings = [
     id: 1, title: 'Лабрадор-ретривер, щенки', breed: 'Лабрадор', age: '2 мес', price: '25 000 ₽',
     city: 'Москва', emoji: '🐕', seller: 'Анна К.', sellerRating: 4.9, reviews: 34,
     verified: true, tags: ['Привит', 'Документы'], urgent: false, saved: false,
+    description: 'Щенки от родителей-чемпионов. Мальчики и девочки. Все привиты, дегельминтизированы, ветпаспорта оформлены. Передаём в 2 месяца. Родители здоровы, рядом.',
   },
   {
     id: 2, title: 'Мейн-кун, шоу-класс', breed: 'Мейн-кун', age: '3 мес', price: '45 000 ₽',
     city: 'СПб', emoji: '🐱', seller: 'Михаил О.', sellerRating: 5.0, reviews: 12,
     verified: true, tags: ['Привит', 'Выставочный'], urgent: true, saved: true,
+    description: 'Котята от выставочных родителей WCF. Окрас серебристый тэбби и браун. Документы, метрики, генетические тесты. Возможен показ котят в Питере.',
   },
   {
     id: 3, title: 'Попугай ара, синий', breed: 'Ара', age: '6 мес', price: '95 000 ₽',
     city: 'Казань', emoji: '🦜', seller: 'Юля В.', sellerRating: 4.8, reviews: 7,
     verified: false, tags: ['Говорит', 'Ручной'], urgent: false, saved: false,
+    description: 'Синий ара, выкормлен вручную с рождения. Говорит 12 слов и фраз. Привязан к людям, легко идёт на руки. Документы СИТЕС в наличии. Отдаём с клеткой.',
   },
   {
     id: 4, title: 'Хаски, рабочие линии', breed: 'Хаски', age: '1.5 мес', price: '35 000 ₽',
     city: 'Новосибирск', emoji: '🐺', seller: 'Сергей П.', sellerRating: 4.7, reviews: 21,
     verified: true, tags: ['Привит', 'Чипирован'], urgent: false, saved: false,
+    description: 'Щенки сибирского хаски от рабочих ездовых собак. Папа — победитель гонок Берингия 2024. Голубые и карие глаза. Чипированы, привиты, договор купли-продажи.',
   },
   {
     id: 5, title: 'Британская кошка, голубая', breed: 'Британская', age: '2.5 мес', price: '22 000 ₽',
     city: 'Краснодар', emoji: '😺', seller: 'Ольга М.', sellerRating: 4.6, reviews: 9,
     verified: true, tags: ['Привит', 'Документы'], urgent: true, saved: false,
+    description: 'Голубая британская девочка. Спокойный уравновешенный характер. Приучена к лотку и когтеточке. Глаза насыщенно медного цвета. Отдаём срочно — переезжаем.',
   },
   {
     id: 6, title: 'Бородатый агама', breed: 'Агама', age: '4 мес', price: '7 000 ₽',
     city: 'Екатеринбург', emoji: '🦎', seller: 'Денис Т.', sellerRating: 4.5, reviews: 5,
     verified: false, tags: ['Ручной', 'Комплект'], urgent: false, saved: false,
+    description: 'Молодой бородатый агама, ручной с рождения. В комплекте: террариум 120 л, ультрафиолет, подогрев, кормушки и поилки. Объясню содержание и кормление.',
   },
 ];
 
@@ -131,6 +137,8 @@ export default function ListingsSection() {
                   <span>·</span>
                   <span>{item.age}</span>
                 </div>
+
+                <p className="text-sm text-gray-500 font-golos leading-relaxed mb-3 line-clamp-3">{item.description}</p>
 
                 <div className="flex flex-wrap gap-1.5 mb-4">
                   {item.tags.map(t => (

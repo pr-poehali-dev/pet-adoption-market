@@ -11,6 +11,7 @@ const navItems = [
   { id: 'catalog', label: 'Каталог' },
   { id: 'listings', label: 'Объявления' },
   { id: 'shelters', label: 'Приюты' },
+  { id: 'sellers', label: 'Продавцы' },
   { id: 'saved', label: 'Избранное' },
   { id: 'profile', label: 'Кабинет' },
 ];
