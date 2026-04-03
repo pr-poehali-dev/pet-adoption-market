@@ -26,10 +26,10 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
           className="flex items-center gap-2 group"
         >
           <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-brand-orange to-brand-amber flex items-center justify-center text-white text-lg font-bold font-oswald shadow-md group-hover:scale-105 transition-transform">
-            П
+            P
           </div>
           <span className="font-oswald font-bold text-xl text-brand-dark">
-            Питомец<span className="text-brand-orange">РФ</span>
+            PETZZ<span className="text-brand-orange">.com</span>
           </span>
         </button>
 

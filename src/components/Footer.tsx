@@ -12,9 +12,9 @@ export default function Footer({ onNavigate }: FooterProps) {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-brand-orange to-brand-amber flex items-center justify-center text-white font-bold font-oswald text-xl">
-                П
+                P
               </div>
-              <span className="font-oswald font-bold text-2xl">Питомец<span className="text-brand-orange">РФ</span></span>
+              <span className="font-oswald font-bold text-2xl">PETZZ<span className="text-brand-orange">.com</span></span>
             </div>
             <p className="font-golos text-white/60 text-base leading-relaxed max-w-sm">
               Маркетплейс животных России. Найди питомца, помоги приюту или стань заводчиком.
@@ -83,7 +83,7 @@ export default function Footer({ onNavigate }: FooterProps) {
         </div>
 
         <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-white/10 gap-4">
-          <p className="text-white/30 text-sm font-golos">© 2026 ПитомецРФ. Все права защищены</p>
+          <p className="text-white/30 text-sm font-golos">© 2026 PETZZ.com. Все права защищены</p>
           <div className="flex items-center gap-3">
             {['🐶', '🐱', '🐦', '🐰', '🐠'].map((a, i) => (
               <span key={i} className="text-xl opacity-40 hover:opacity-100 transition-opacity cursor-default">{a}</span>
