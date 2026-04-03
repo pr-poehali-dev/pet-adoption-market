@@ -53,11 +53,25 @@ function StarRating({ value, count }: { value: number; count: number }) {
   );
 }
 
+const docOptions = [
+  { id: 'passport', label: '📋 Ветеринарный паспорт' },
+  { id: 'vaccinated', label: '💉 Привит' },
+  { id: 'chipped', label: '📡 Чипирован' },
+  { id: 'pedigree', label: '🏆 Родословная' },
+  { id: 'dewormed', label: '🔬 Дегельминтизирован' },
+  { id: 'contract', label: '📝 Договор купли-продажи' },
+];
+
 export default function ListingsSection() {
   const [activeFilter, setActiveFilter] = useState('Все');
   const [activeCity, setActiveCity] = useState('Любой город');
   const [saved, setSaved] = useState<number[]>([2]);
   const [showForm, setShowForm] = useState(false);
+  const [checkedDocs, setCheckedDocs] = useState<string[]>(['passport']);
+
+  const toggleDoc = (id: string) => {
+    setCheckedDocs(prev => prev.includes(id) ? prev.filter(d => d !== id) : [...prev, id]);
+  };
 
   const toggleSave = (id: number) => {
     setSaved(prev => prev.includes(id) ? prev.filter(i => i !== id) : [...prev, id]);
@@ -198,6 +212,27 @@ export default function ListingsSection() {
               </div>
               <input className="w-full px-4 py-3 rounded-2xl border border-gray-200 font-golos text-sm focus:outline-none focus:border-brand-orange" placeholder="Город" />
               <textarea className="w-full px-4 py-3 rounded-2xl border border-gray-200 font-golos text-sm focus:outline-none focus:border-brand-orange resize-none" rows={3} placeholder="Описание питомца..." />
+              <div className="bg-gray-50 rounded-2xl p-4">
+                <div className="text-xs font-golos font-semibold text-gray-500 uppercase tracking-wide mb-3">Документы и здоровье</div>
+                <div className="grid grid-cols-2 gap-3">
+                  {docOptions.map(item => {
+                    const checked = checkedDocs.includes(item.id);
+                    return (
+                      <button
+                        key={item.id}
+                        type="button"
+                        onClick={() => toggleDoc(item.id)}
+                        className={`flex items-center gap-2.5 text-left transition-all rounded-xl px-3 py-2 ${checked ? 'bg-orange-100' : 'hover:bg-gray-100'}`}
+                      >
+                        <div className={`w-5 h-5 rounded-md border-2 flex items-center justify-center flex-shrink-0 transition-all ${checked ? 'bg-brand-orange border-brand-orange' : 'border-gray-300'}`}>
+                          {checked && <Icon name="Check" size={12} className="text-white" />}
+                        </div>
+                        <span className={`text-sm font-golos transition-colors ${checked ? 'text-brand-dark font-medium' : 'text-gray-600'}`}>{item.label}</span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
               <button className="w-full btn-primary py-4 text-base">
                 Опубликовать объявление
               </button>
