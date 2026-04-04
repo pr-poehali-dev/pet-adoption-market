@@ -1,6 +1,6 @@
 import Icon from '@/components/ui/icon';
 
-const HERO_IMAGE = 'https://cdn.poehali.dev/projects/451fe26c-a3db-4ea3-8718-ef5a99958038/files/91396890-ab98-40fd-bf59-da387ad5b385.jpg';
+const HERO_IMAGE = 'https://cdn.poehali.dev/projects/451fe26c-a3db-4ea3-8718-ef5a99958038/bucket/9decb551-764d-40f6-807c-03e3c14fa3a7.png';
 
 const stats = [
   { value: '48 000+', label: 'животных' },
